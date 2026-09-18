@@ -21,28 +21,39 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.buton-lalagyan {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 30px auto 0;
+}
+
 .buton {
-  display: inline-block;
-  background-color: #27ae60;
+  background-color: #3498db;
   color: white;
   padding: 12px 30px;
   font-size: 18px;
   text-decoration: none;
   border-radius: 8px;
-  margin-top: 20px;
+  transition: 0.3s;
 }
+.buton:hover {
+  background-color: #2980b9;
+}
+.balik { background-color: #95a5a6; }
+.balik:hover { background-color: #7f8c8d; }
 
 
   </style>
 </head>
 <body>
-  <h1>🎉 Nasa Pangalawang Pahina Ka Na!</h1>
-  <!-- ✅ ITO ANG LITRATO MO -->
+  <h1>🎉 Pahina 2</h1>
   <img src="1000129750.png" alt="Ang Aking Litrato" class="litrato">
-  <p>Binabati kita! Gumagana ang buton mo!</p>
-  <p>Ang galing naman! ✨</p>
-
-<a href="index.html" class="buton">⬅️ Balik sa Unang Pahina</a>
-
+  <p>Nandito na ang litrato mo! ✨</p>
+  <!-- ✅ Tinanggal na ang mga palaso -->
+  <div class="buton-lalagyan">
+    <a href="index.html" class="buton balik">Back</a>
+    <a href="page3.html" class="buton">Next</a>
+  </div>
 </body>
 </html>
