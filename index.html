@@ -52,7 +52,7 @@
   </style>
 </head>
 <body>
-  <!-- ILAGAY ANG PANGALAN — LAGING LALABAS -->
+  <!-- ILAGAY ANG PANGALAN -->
   <div id="form">
     <h1>👋 Welcome to Panlilio Gallery</h1>
     <p style="font-size: 18px; color: #555;">Ilagay ang pangalan mo:</p>
@@ -60,23 +60,22 @@
     <br>
     <button class="buton" onclick="goNext()">Enter ✅</button>
   </div>
-  <!-- LALABAS PAGKATAPOS -->
+  <!-- LALABAS PAGKATAPOS — WALANG NAKALAGAY NA PANGALAN NG PAMILYA -->
   <div id="content" class="hidden">
     <h1>Hello, <span id="nameHere"></span>! 👋</h1>
     <div class="kahon">
       <h2>Our Family 🏡</h2>
-      <p><strong>Papa:</strong> Nico</p>
-      <p><strong>Mama:</strong> Roxselle</p>
-      <p><strong>Ate 1:</strong> Kassandra</p>
-      <p><strong>Ate 2:</strong> Alexandra</p>
-      <p><strong>Bunso:</strong> Prince</p>
-      <p style="margin-top: 20px; color: #e74c3c; font-style: italic;">Family is forever — a love that has no end. 💞</p>
+      <p style="color: #e74c3c; font-style: italic; font-size: 20px; margin-top: 10px;">
+        Family is forever — a love that has no end. 💞
+      </p>
+      <p style="color: #666; margin-top: 15px;">
+        Love, togetherness, and home — that is what family means. ❤️
+      </p>
     </div>
     <br>
     <a href="pahina2.html" class="buton">See Our Family 📸</a>
   </div>
 <script>
-// ✅ LAGING MAGTATANONG — WALANG PAG-ALALA
 function goNext() {
   let name = document.getElementById('nameBox').value.trim();
   if (!name) {
