@@ -13,7 +13,7 @@
       position: relative;
     }
 
-/* PICTURE — TOP RIGHT */
+/* LARAWAN SA KANANG ITAAS */
 .corner-pic {
   position: absolute;
   top: 25px;
@@ -21,11 +21,7 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff6b6b, #ee9a9a);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
+  object-fit: cover; /* hindi mag-iinat */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border: 3px solid white;
   z-index: 10;
@@ -74,7 +70,7 @@ h1 {
   font-style: italic;
 }
 
-/* Sa maliit na screen — ilalagay sa ibabaw ng content */
+/* Sa cellphone — ilalagay sa ibabaw */
 @media (max-width: 500px) {
   .corner-pic {
     position: relative;
@@ -88,9 +84,8 @@ h1 {
   </style>
 </head>
 <body>
-  <!-- PICTURE — TOP RIGHT -->
-  <div class="corner-pic">🌸</div>
-  <!-- PROFILE PAGE -->
+  <!-- ✅ Nakalagay na: kassy1.jpeg -->
+  <img src="kassy1.jpeg" alt="Ate Kassy" class="corner-pic">
   <div class="container">
     <div class="profile-img">👩</div>
     <h1>Ate Kassy</h1>
@@ -121,7 +116,6 @@ h1 {
     <li>Playing and having fun</li>
     <li>Being a caring big sister</li>
     <li>Learning new things</li>
-    <li>Helping around at home</li>
   </ul>
 </div>
 
