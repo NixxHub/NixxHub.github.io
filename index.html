@@ -1,50 +1,78 @@
 <!DOCTYPE html>
-<html lang="tl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ang Aking Website</title>
-  <meta name="description" content="Ito ang aking website na may kulay at buton!">
+  <title>Panlilio Gallery</title>
   <style>
-    body {
-      background-color: #f0f8ff;
-      font-family: Arial, sans-serif;
-      margin: 50px;
-      text-align: center;
+    /* ✅ PAGE TRANSITION EFFECT */
+    @view-transition {
+      navigation: auto;
     }
+
+::view-transition-old(root) {
+  animation: 0.3s ease-out both fade-out;
+}
+::view-transition-new(root) {
+  animation: 0.4s ease-out both slide-in;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: #f0f8ff;
+  font-family: Arial, sans-serif;
+  margin: 50px auto;
+  text-align: center;
+  max-width: 600px;
+}
 
 h1 {
   color: #2c3e50;
-}
-
-h2 {
-  color: #e74c3c;
-}
-
-p {
-  color: #34495e;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 2.2em;
+  margin-bottom: 40px;
 }
 
 .kahon {
   background-color: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  margin: 30px auto;
-  max-width: 500px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.kahon h2 {
+  color: #e74c3c;
+  font-size: 1.8em;
+  margin-top: 0;
+}
+
+.kahon p {
+  color: #34495e;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .buton {
   display: inline-block;
   background-color: #3498db;
   color: white;
-  padding: 12px 30px;
-  font-size: 18px;
+  padding: 14px 40px;
+  font-size: 20px;
   text-decoration: none;
-  border-radius: 8px;
-  margin-top: 20px;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
@@ -56,15 +84,14 @@ p {
   </style>
 </head>
 <body>
-  <h1>Kamusta! Ako po si NixxHub 👋</h1>
+  <h1>Hello There 👋<br>Welcome to Panlilio Gallery</h1>
   <div class="kahon">
-    <h2>Tungkol sa Akin</h2>
-    <p>Ito ang aking sariling website na may kulay at buton!</p>
-    <p>Mahilig akong mag-explore at gumawa ng mga bagong bagay sa internet.</p>
+    <h2>About</h2>
+    <p>This is my personal website! ✨</p>
+    <p>I love exploring and creating new things on the internet.</p>
   </div>
-  <!-- ✅ Tinanggal na ang palaso dito -->
 
-<a href="pahina2.html" class="buton">Click Here</a>
+<a href="page2.html" class="buton">Click Here</a>
 
 </body>
 </html>
