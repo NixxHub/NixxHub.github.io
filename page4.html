@@ -7,6 +7,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
+/* Full background image */
 body {
   min-height: 100vh;
   background: url('kassy1.jpeg') no-repeat center center fixed;
@@ -15,7 +16,7 @@ body {
   position: relative;
 }
 
-/* ✅ LIGHT OVERLAY LANG PARA MABASA ANG TEXT */
+/* Light overlay para hindi masyadong magulo ang background sa text */
 body::before {
   content: "";
   position: fixed;
@@ -23,92 +24,76 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.20); /* mas light overlay */
   z-index: 0;
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 30px 20px 100px 20px;
+  padding: 40px 20px 100px 20px;
   position: relative;
   z-index: 1;
 }
 
 h1 {
   text-align: center;
-  color: #fff;
+  color: #111111; /* dark black na title */
   margin-bottom: 5px;
-  font-size: 28px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  font-size: 32px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8); /* light shadow for readability */
 }
 
 .subtitle {
   text-align: center;
-  color: #fff8f8;
-  margin-bottom: 30px;
+  color: #222222; /* dark gray subtitle */
+  margin-bottom: 40px;
   font-style: italic;
+  font-size: 16px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
+}
+
+/* Dark text blocks, no white cards */
+.text-block {
+  margin-bottom: 30px;
+  color: #333333; /* dark gray text */
+  line-height: 1.9;
   font-size: 15px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.9);
 }
 
-/* ✅ MAS TRANSPARENT NA CARDS */
-.info-card {
-  background: rgba(255, 255, 255, 0.70);
-  border-radius: 16px;
-  padding: 22px;
-  margin-bottom: 18px;
-  transition: transform 0.3s;
-  backdrop-filter: blur(4px);
+.text-block h3 {
+  color: #111111; /* darker heading */
+  margin-bottom: 12px;
+  font-size: 20px;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.8);
 }
 
-.info-card:hover {
-  transform: translateY(-3px);
+.text-block p {
+  margin-bottom: 10px;
 }
 
-.info-card h3 {
-  color: #e85a5a;
-  margin-bottom: 14px;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.info-card p {
-  color: #444;
-  line-height: 1.8;
-  font-size: 15px;
+.text-block ul {
+  padding-left: 25px;
+  margin-top: 10px;
 }
 
-.info-card ul {
-  padding-left: 22px;
-  margin-top: 8px;
-}
-
-.info-card li {
-  color: #444;
-  margin: 7px 0;
-  line-height: 1.7;
-}
-
-.story-card {
-  background: rgba(255, 240, 240, 0.70);
-  border: 2px solid rgba(255, 214, 214, 0.85);
+.text-block li {
+  margin: 8px 0;
 }
 
 .story-text {
-  color: #555;
-  line-height: 1.9;
-  font-size: 15px;
   font-style: italic;
+  color: #222222;
 }
 
+/* Navigation buttons */
 .nav-buttons {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -118,7 +103,7 @@ h1 {
 
 .nav-btn {
   padding: 12px 25px;
-  border:  none;
+  border: none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -147,7 +132,81 @@ h1 {
 
 @media (max-width: 500px) {
   .container {
-    padding: 20px 15px 90px 15px;
+    padding: 30px 15px 90px 15px;
   }
 
-  .nav-btn<[SILENT_never_used_51bce0c785ca2f68081bfa7d91973934]>
+  h1 {
+    font-size: 28px;
+  }
+
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ate Kassy</h1>
+    <p class="subtitle">The Eldest Daughter 💕</p>
+
+<div class="text-block">
+  <h3>📋 About Her</h3>
+  <p>
+    <strong>Born:</strong> October 15, 2015<br>
+    <strong>Birthplace:</strong> San Fernando City<br>
+    <strong>Age:</strong> 10 years old<br>
+    <strong>Position in Family:</strong> Firstborn / Eldest Daughter
+  </p>
+</div>
+
+<div class="text-block">
+  <h3>💖 Her Story</h3>
+  <p class="story-text">
+    She is our precious eldest daughter — so sweet and gentle, yet still our baby in every way.<br><br>
+    You can truly see how much she loves us: whenever she knows you've been scolded or treated unfairly, she gets protective and stands up for you. But of course, being the eldest, she is also the <strong>number one playful tease</strong> to her two younger siblings!
+  </p>
+</div>
+
+<div class="text-block">
+  <h3>❤️ Things She Loves</h3>
+  <ul>
+    <li>Spending time with family</li>
+    <li>Playing and having fun</li>
+    <li>Being a caring big sister</li>
+    <li>Learning new things</li>
+    <li>Helping around at home</li>
+  </ul>
+</div>
+
+<div class="text-block">
+  <h3>✨ Wonderful Qualities</h3>
+  <ul>
+    <li>Loving and protective</li>
+    <li>Kind and obedient</li>
+    <li>Cheerful and always smiling</li>
+    <li>Responsible as the eldest</li>
+    <li>Has a heart full of love</li>
+  </ul>
+</div>
+
+
+  </div>
+  <div class="nav-buttons">
+    <button class="nav-btn back-btn" onclick="goBack()">⬅ Back</button>
+    <button class="nav-btn next-btn" onclick="goNext()">Next ➡</button>
+  </div>
+<script>
+  function goBack() {
+    window.location.href = 'page3.html';
+  }
+
+  function goNext() {
+    window.location.href = 'page5.html';
+  }
+</script>
+</body>
+</html>
