@@ -54,7 +54,7 @@
   <!-- PAGTATANONG NG PANGALAN -->
   <div id="form-section">
     <h1>👋 Welcome to Panlilio Gallery</h1>
-    <p style="font-size: 18px; color: #555;">Please enter your name to continue:</p>
+    <p style="font-size: 18px; color: #555;">Enter your name to see your family! 👨‍👩‍👧‍👦</p>
     <input type="text" id="nameInput" placeholder="Type your name here...">
     <br><br>
     <button class="buton" onclick="submitName()">Enter 🚀</button>
@@ -64,17 +64,49 @@
     <h1>Hello, <span id="displayName"></span>! 👋<br>Welcome to Panlilio Gallery</h1>
 
 <div class="kahon">
-  <h2>About</h2>
-  <p>Family is the bond that knows no end — a love that lasts forever and always. 💞</p>
-  <p>Like an unbroken circle, our connection has no beginning and no end, stretching through time and beyond. 🔁</p>
-  <p>Through every joy and every challenge, we stand together — one heart, one home, forever. 🏡❤️</p>
+  <h2>About Our Family 🏡</h2>
+  <p><strong>Papa:</strong> <span id="papa-name"></span></p>
+  <p><strong>Mama:</strong> <span id="mama-name"></span></p>
+  <p><strong>Ate:</strong> <span id="ate-name"></span></p>
+  <p><strong>Bunso:</strong> <span id="bunso-name"></span></p>
+  <br>
+  <p style="color: #e74c3c; font-style: italic;">Family is forever — a love that has no end. 💞</p>
 </div>
 
-<a href="pahina2.html" class="buton">Click Here</a>
+<a href="pahina2.html" class="buton">See Our Family Photo 📸</a>
 
 
   </div>
 <script>
+// ✅ DITO ILALAGAY ANG MGA PANGALAN NG PAMILYA MO
+const familyData = {
+  "Nico": {
+    papa: "Nico",
+    mama: "Maria",
+    ate: "Ana",
+    bunso: "Nico"
+  },
+  "Ana": {
+    papa: "Roberto",
+    mama: "Maria",
+    ate: "Ana",
+    bunso: "Nico"
+  },
+  "Roberto": {
+    papa: "Roberto",
+    mama: "Maria",
+    ate: "Ana",
+    bunso: "Nico"
+  },
+  "Maria": {
+    papa: "Roberto",
+    mama: "Maria",
+    ate: "Ana",
+    bunso: "Nico"
+  }
+  // ✅ PWEDE MAGDAGDAG DITO — "Pangalan": {papa:"...", mama:"...", ate:"...", bunso:"..."}
+};
+
 window.onload = function() {
   const savedName = localStorage.getItem('visitorName');
   if (savedName) showMainContent(savedName);
@@ -94,6 +126,21 @@ function showMainContent(name) {
   document.getElementById('form-section').classList.add('hidden');
   document.getElementById('content-section').classList.remove('hidden');
   document.getElementById('displayName').textContent = name;
+
+  // ✅ KUNG KILALA ANG PANGALAN → ILABAS ANG PAMILYA
+  const data = familyData[name];
+  if (data) {
+    document.getElementById('papa-name').textContent = data.papa;
+    document.getElementById('mama-name').textContent = data.mama;
+    document.getElementById('ate-name').textContent = data.ate;
+    document.getElementById('bunso-name').textContent = data.bunso;
+  } else {
+    // ✅ KUNG HINDI KILALA → PANGALAN LANG ANG LALABAS
+    document.getElementById('papa-name').textContent = "—";
+    document.getElementById('mama-name').textContent = "—";
+    document.getElementById('ate-name').textContent = "—";
+    document.getElementById('bunso-name').textContent = "—";
+  }
 }
 </script>
 </body>
