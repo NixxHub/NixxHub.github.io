@@ -9,74 +9,104 @@
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      padding: 20px;
+      padding: 0;
       position: relative;
     }
 
-/* LARAWAN SA KANANG ITAAS */
-.corner-pic {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover; /* hindi mag-iinat */
+/* ✅ MALAKING LARAWAN SA GITNA, RECTANGLE, HINDI BILOG */
+.main-picture {
+  display: block;
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   border: 3px solid white;
-  z-index: 10;
+  margin: 30px auto 20px auto;
 }
 
 .container {
-  max-width: 520px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
-  padding: 35px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  padding: 20px 20px 40px 20px;
   position: relative;
 }
 
-.profile-img {
-  width: 130px; height: 130px; border-radius: 50%;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  margin: 0 auto 25px; display: flex; align-items: center; justify-content: center;
-  font-size: 55px; color: white; box-shadow: 0 4px 12px rgba(255,107,107,0.25);
-}
 h1 {
-  text-align: center; color: #ff6b6b; margin-bottom: 5px; font-size: 28px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 28px;
 }
+
 .subtitle {
-  text-align: center; color: #999; margin-bottom: 30px; font-style: italic; font-size: 15px;
+  text-align: center;
+  color: #fff8f8;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-size: 15px;
 }
+
 .info-card {
-  background: #fff5f5; border-radius: 16px; padding: 22px; margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
   transition: transform 0.3s;
 }
-.info-card:hover { transform: translateY(-3px); }
-.info-card h3 {
-  color: #e85a5a; margin-bottom: 14px; font-size: 18px; display: flex;
-  align-items: center; gap: 8px;
+
+.info-card:hover {
+  transform: translateY(-3px);
 }
-.info-card p { color: #444; line-height: 1.8; font-size: 15px; }
-.info-card ul { padding-left: 22px; margin-top: 8px; }
-.info-card li { color: #444; margin: 7px 0; line-height: 1.7; }
+
+.info-card h3 {
+  color: #e85a5a;
+  margin-bottom: 14px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-card p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.info-card ul {
+  padding-left: 22px;
+  margin-top: 8px;
+}
+
+.info-card li {
+  color: #444;
+  margin: 7px 0;
+  line-height: 1.7;
+}
+
 .story-card {
   background: linear-gradient(135deg, #fff0f0, #ffe8e0);
   border: 2px solid #ffd6d6;
 }
+
 .story-text {
-  color: #555; line-height: 1.9; font-size: 15px;
+  color: #555;
+  line-height: 1.9;
+  font-size: 15px;
   font-style: italic;
 }
 
-/* Sa cellphone — ilalagay sa ibabaw */
 @media (max-width: 500px) {
-  .corner-pic {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: 0 auto 15px;
+  .main-picture {
+    width: 90%;
+    height: 180px;
+  }
+
+  .container {
+    padding: 15px 15px 30px 15px;
   }
 }
 
@@ -84,10 +114,9 @@ h1 {
   </style>
 </head>
 <body>
-  <!-- ✅ Nakalagay na: kassy1.jpeg -->
-  <img src="kassy1.jpeg" alt="Ate Kassy" class="corner-pic">
+  <!-- ✅ LARAWAN SA GITNA, RECTANGLE NA -->
+  <img src="kassy1.jpeg" alt="Ate Kassy" class="main-picture">
   <div class="container">
-    <div class="profile-img">👩</div>
     <h1>Ate Kassy</h1>
     <p class="subtitle">The Eldest Daughter 💕</p>
 
@@ -116,6 +145,7 @@ h1 {
     <li>Playing and having fun</li>
     <li>Being a caring big sister</li>
     <li>Learning new things</li>
+    <li>Helping around at home</li>
   </ul>
 </div>
 
