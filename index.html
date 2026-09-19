@@ -8,150 +8,96 @@
     body {
       background-color: #f0f8ff;
       font-family: Arial, sans-serif;
-      margin: 50px auto;
+      margin: 80px auto;
       text-align: center;
       max-width: 600px;
+      padding: 0 20px;
     }
     h1 {
       color: #2c3e50;
-      font-size: 2.2em;
-      margin-bottom: 40px;
+      font-size: 2em;
+      margin-bottom: 30px;
     }
-    .kahon {
-      background-color: #fff;
-      padding: 30px 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      margin-bottom: 40px;
+    input {
+      padding: 15px;
+      font-size: 20px;
+      border: 2px solid #3498db;
+      border-radius: 10px;
+      width: 280px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .kahon h2 { color: #e74c3c; font-size: 1.8em; margin-top: 0; }
-    .kahon p { color: #34495e; font-size: 18px; line-height: 1.8; margin: 15px 0; }
     .buton {
       display: inline-block;
       background-color: #3498db;
       color: white;
-      padding: 14px 40px;
+      padding: 15px 50px;
       font-size: 20px;
-      text-decoration: none;
-      border-radius: 10px;
       border: none;
+      border-radius: 10px;
       cursor: pointer;
+      text-decoration: none;
     }
     .buton:hover { background-color: #2980b9; }
-    input {
-      padding: 12px 20px;
-      font-size: 18px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      width: 250px;
-      margin-bottom: 15px;
-      text-align: center;
+    .kahon {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
     }
+    .kahon h2 { color: #e74c3c; }
+    .kahon p { font-size: 18px; line-height: 1.8; }
     .hidden { display: none; }
   </style>
 </head>
 <body>
-  <!-- PAGTATANONG NG PANGALAN -->
-  <div id="form-section">
+  <!-- ILAGAY ANG PANGALAN -->
+  <div id="form">
     <h1>👋 Welcome to Panlilio Gallery</h1>
-    <p style="font-size: 18px; color: #555;">Enter your name to see your family! 👨‍👩‍👧‍👦</p>
-    <input type="text" id="nameInput" placeholder="Type your name here...">
-    <br><br>
-    <button class="buton" onclick="submitName()">Enter 🚀</button>
+    <p style="font-size: 18px; color: #555;">Ilagay ang pangalan mo:</p>
+    <input type="text" id="nameBox" placeholder="Hal. Nico">
+    <br>
+    <button class="buton" onclick="goNext()">Enter ✅</button>
   </div>
-  <!-- LALABAS PAGKATAPOS MAGLAGAY -->
-  <div id="content-section" class="hidden">
-    <h1>Hello, <span id="displayName"></span>! 👋<br>Welcome to Panlilio Gallery</h1>
-
-<div class="kahon">
-  <h2>About Our Family 🏡</h2>
-  <p><strong>Papa:</strong> <span id="papa-name"></span></p>
-  <p><strong>Mama:</strong> <span id="mama-name"></span></p>
-  <p><strong>Ate:</strong> <span id="ate-name"></span></p>
-  <p><strong>Bunso:</strong> <span id="bunso-name"></span></p>
-  <br>
-  <p style="color: #e74c3c; font-style: italic;">Family is forever — a love that has no end. 💞</p>
-</div>
-
-<a href="pahina2.html" class="buton">See Our Family Photo 📸</a>
-
-
+  <!-- LALABAS PAGKATAPOS -->
+  <div id="content" class="hidden">
+    <h1>Hello, <span id="nameHere"></span>! 👋</h1>
+    <div class="kahon">
+      <h2>Our Family 🏡</h2>
+      <p><strong>Papa:</strong> Nico</p>
+      <p><strong>Mama:</strong> Roxselle</p>
+      <p><strong>Ate 1:</strong> Kassandra</p>
+      <p><strong>Ate 2:</strong> Alexandra</p>
+      <p><strong>Bunso:</strong> Prince</p>
+      <p style="margin-top: 20px; color: #e74c3c; font-style: italic;">Family is forever — a love that has no end. 💞</p>
+    </div>
+    <br>
+    <a href="pahina2.html" class="buton">See Our Family 📸</a>
   </div>
 <script>
-// ✅ DITO ILALAGAY ANG MGA PANGALAN NG PAMILYA MO
-const familyData = {
-  "Nico": {
-    papa: "Nico",
-    mama: "Roxselle",
-    ate 1: "Kassandra",
-    ate 2: "Alexandra",
-    bunso: "Prince"
-  },
-  "Roxselle": {
-    papa: "Nico",
-    mama: "Roxselle",
-    ate 1: "Kassandra",
-    ate 2: "Alexandra",
-    bunso: "Prince"
-  },
-  "Kassandra": {
-    papa: "Nico",
-    mama: "Roxselle",
-    ate 1: "Kassandra",
-    ate 2: "Alexandra",
-    bunso: "Prince"
-  },
-  "Alexandra": {
-    papa: "Nico",
-    mama: "Roxselle",
-    ate 1: "Kassandra",
-    ate 2: "Alexandra",
-    bunso: "Prince"
-  },
-  "Prince": {
-    papa: "Nico",
-    mama: "Roxselle",
-    ate 1: "Kassandra",
-    ate 2: "Alexandra",
-    bunso: "Prince"
-  } 
-  // ✅ PWEDE MAGDAGDAG DITO — "Pangalan": {papa:"...", mama:"...", ate:"...", bunso:"..."}
-};
+// ✅ KILALANG PANGALAN NG PAMILYA
+const validNames = ["Nico","Roxselle","Kassandra","Alexandra","Prince"];
 
 window.onload = function() {
-  const savedName = localStorage.getItem('visitorName');
-  if (savedName) showMainContent(savedName);
+  const saved = localStorage.getItem('visitorName');
+  if (saved) showPage(saved);
 };
 
-function submitName() {
-  const name = document.getElementById('nameInput').value.trim();
+function goNext() {
+  let name = document.getElementById('nameBox').value.trim();
   if (!name) {
-    alert('Please enter your name first! 😊');
+    alert('Pakilagay ang pangalan muna! 😊');
     return;
   }
   localStorage.setItem('visitorName', name);
-  showMainContent(name);
+  showPage(name);
 }
 
-function showMainContent(name) {
-  document.getElementById('form-section').classList.add('hidden');
-  document.getElementById('content-section').classList.remove('hidden');
-  document.getElementById('displayName').textContent = name;
-
-  // ✅ KUNG KILALA ANG PANGALAN → ILABAS ANG PAMILYA
-  const data = familyData[name];
-  if (data) {
-    document.getElementById('papa-name').textContent = data.papa;
-    document.getElementById('mama-name').textContent = data.mama;
-    document.getElementById('ate-name').textContent = data.ate;
-    document.getElementById('bunso-name').textContent = data.bunso;
-  } else {
-    // ✅ KUNG HINDI KILALA → PANGALAN LANG ANG LALABAS
-    document.getElementById('papa-name').textContent = "—";
-    document.getElementById('mama-name').textContent = "—";
-    document.getElementById('ate-name').textContent = "—";
-    document.getElementById('bunso-name').textContent = "—";
-  }
+function showPage(name) {
+  document.getElementById('form').classList.add('hidden');
+  document.getElementById('content').classList.remove('hidden');
+  document.getElementById('nameHere').textContent = name;
 }
 </script>
 </body>
