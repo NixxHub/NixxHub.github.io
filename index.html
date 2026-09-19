@@ -41,13 +41,13 @@
     .buton:hover { background-color: #2980b9; }
     .kahon {
       background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       margin-top: 30px;
     }
-    .kahon h2 { color: #e74c3c; }
-    .kahon p { font-size: 18px; line-height: 1.8; }
+    .kahon h2 { color: #e74c3c; font-size: 1.8em; margin-top: 0; }
+    .kahon p { color: #34495e; font-size: 18px; line-height: 1.8; margin: 15px 0; }
     .hidden { display: none; }
   </style>
 </head>
@@ -60,23 +60,20 @@
     <br>
     <button class="buton" onclick="goNext()">Enter ✅</button>
   </div>
-  <!-- LALABAS PAGKATAPOS -->
+  <!-- LALABAS PAGKATAPOS — MAY MAHABANG INTRODUCTION -->
   <div id="content" class="hidden">
     <h1 id="greeting">Hello! 👋</h1>
     <div class="kahon">
       <h2>Our Family 🏡</h2>
-      <p style="color: #e74c3c; font-style: italic; font-size: 20px; margin-top: 10px;">
-        Family is forever — a love that has no end. 💞
-      </p>
-      <p style="color: #666; margin-top: 15px;">
-        Love, togetherness, and home — that is what family means. ❤️
-      </p>
+      <p>Family is the bond that knows no end — a love that lasts forever and always. 💞</p>
+      <p>Like an unbroken circle, our connection has no beginning and no end, stretching through time and beyond. 🔁</p>
+      <p>Through every joy and every challenge, we stand together — one heart, one home, forever. ❤️</p>
     </div>
     <br>
     <a href="pahina2.html" class="buton">See Our Family 📸</a>
   </div>
 <script>
-// ✅ DITO ANG MGA TAWAG SA BAWAT PAMILYA MEMBER
+// ✅ TAWAG SA BAWAT MIYEMBRO NG PAMILYA
 const roles = {
   "Nico": "Papa",
   "Roxselle": "Mama",
@@ -99,11 +96,9 @@ function showPage(name) {
   document.getElementById('form').classList.add('hidden');
   document.getElementById('content').classList.remove('hidden');
   
-  // ✅ KUNG KILALA ANG PANGALAN → Hello Papa/Mama/etc.
   if (roles[name]) {
     document.getElementById('greeting').textContent = `Hello ${roles[name]}! 👋`;
   } else {
-    // ✅ KUNG HINDI KILALA → Hello, [Pangalan]!
     document.getElementById('greeting').textContent = `Hello, ${name}! 👋`;
   }
 }
