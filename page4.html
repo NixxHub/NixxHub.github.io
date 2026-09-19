@@ -7,7 +7,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-/* ✅ BUONG PAGE ANG SAKOP NG LARAWAN */
 body {
   min-height: 100vh;
   background: url('kassy1.jpeg') no-repeat center center fixed;
@@ -16,7 +15,7 @@ body {
   position: relative;
 }
 
-/* ✅ DARK OVERLAY PARA MABASA PA RIN ANG TEXT */
+/* ✅ LIGHT OVERLAY LANG PARA MABASA ANG TEXT */
 body::before {
   content: "";
   position: fixed;
@@ -24,7 +23,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35); /* medyo madilim para lumitaw ang text */
+  background: rgba(0, 0, 0, 0.12);
   z-index: 0;
 }
 
@@ -41,7 +40,7 @@ h1 {
   color: #fff;
   margin-bottom: 5px;
   font-size: 28px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .subtitle {
@@ -50,17 +49,17 @@ h1 {
   margin-bottom: 30px;
   font-style: italic;
   font-size: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* ✅ TRANSPARENT NA INFO CARDS */
+/* ✅ MAS TRANSPARENT NA CARDS */
 .info-card {
-  background: rgba(255, 255, 255, 0.85); /* puti pero medyo transparent */
+  background: rgba(255, 255, 255, 0.70);
   border-radius: 16px;
   padding: 22px;
   margin-bottom: 18px;
   transition: transform 0.3s;
-  backdrop-filter: blur(8px); /* glass effect */
+  backdrop-filter: blur(4px);
 }
 
 .info-card:hover {
@@ -75,7 +74,6 @@ h1 {
   align-items: center;
   gap: 8px;
 }
-
 .info-card p {
   color: #444;
   line-height: 1.8;
@@ -94,7 +92,7 @@ h1 {
 }
 
 .story-card {
-  background: rgba(255, 240, 240, 0.85);
+  background: rgba(255, 240, 240, 0.70);
   border: 2px solid rgba(255, 214, 214, 0.85);
 }
 
@@ -105,13 +103,12 @@ h1 {
   font-style: italic;
 }
 
-/* ✅ BACK & NEXT BUTTONS */
 .nav-buttons {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -121,7 +118,7 @@ h1 {
 
 .nav-btn {
   padding: 12px 25px;
-  border: none;
+  border:  none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -152,73 +149,5 @@ h1 {
   .container {
     padding: 20px 15px 90px 15px;
   }
-  .nav-btn {
-    padding: 10px 20px;
-    font-size: 15px;
-  }
-}
 
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Ate Kassy</h1>
-    <p class="subtitle">The Eldest Daughter 💕</p>
-
-<div class="info-card">
-  <h3>📋 About Her</h3>
-  <p>
-    <strong>Born:</strong> October 15, 2015<br>
-    <strong>Birthplace:</strong> San Fernando City<br>
-    <strong>Age:</strong> 10 years old<br>
-    <strong>Position in Family:</strong> Firstborn / Eldest Daughter
-  </p>
-</bbox>
-
-<div class="info-card story-card">
-  <h3>💖 Her Story</h3>
-  <p class="story-text">
-    She is our precious eldest daughter — so sweet and gentle, yet still our baby in every way.<br><br>
-    You can truly see how much she loves us: whenever she knows you've been scolded or treated unfairly, she gets protective and stands up for you. But of course, being the eldest, she is also the <strong>number one playful tease</strong> to her two younger siblings!
-  </p>
-</div>
-
-<div class="info-card">
-  <h3>❤️ Things She Loves</h3>
-  <ul>
-    <bbox>Spending time with family</bbox>
-    <li>Playing and having fun</li>
-    <li>Being a caring big sister</li>
-    <li>Learning new things</li>
-    <li>Helping around at home</li>
-  </ul>
-</div>
-
-<div class="info-card">
-  <h3>✨ Wonderful Qualities</h3>
-  <ul>
-    <li>Loving and protective</li>
-    <li>Kind and obedient</li>
-    <li>Cheerful and always smiling</li>
-    <li>Responsible as the eldest</li>
-    <li>Has a heart full of love</li>
-  </ul>
-</div>
-
-
-  </div>
-  <div class="nav-buttons">
-    <button class="nav-btn back-btn" onclick="goBack()">⬅ Back</button>
-    <button class="nav-btn next-btn" onclick="goNext()">Next ➡</button>
-  </div>
-<script>
-  function goBack() {
-    window.location.href = 'page3.html';
-  }
-
-  function goNext() {    window.location.href = 'page5.html';
-  }
-</script>
-</body>
-</html>
+  .nav-btn<[SILENT_never_used_51bce0c785ca2f68081bfa7d91973934]>
