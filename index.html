@@ -52,7 +52,7 @@
   </style>
 </head>
 <body>
-  <!-- ILAGAY ANG PANGALAN -->
+  <!-- ILAGAY ANG PANGALAN — LAGING LALABAS -->
   <div id="form">
     <h1>👋 Welcome to Panlilio Gallery</h1>
     <p style="font-size: 18px; color: #555;">Ilagay ang pangalan mo:</p>
@@ -76,14 +76,7 @@
     <a href="pahina2.html" class="buton">See Our Family 📸</a>
   </div>
 <script>
-// ✅ KILALANG PANGALAN NG PAMILYA
-const validNames = ["Nico","Roxselle","Kassandra","Alexandra","Prince"];
-
-window.onload = function() {
-  const saved = localStorage.getItem('visitorName');
-  if (saved) showPage(saved);
-};
-
+// ✅ LAGING MAGTATANONG — WALANG PAG-ALALA
 function goNext() {
   let name = document.getElementById('nameBox').value.trim();
   if (!name) {
